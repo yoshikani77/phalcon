@@ -1,0 +1,18 @@
+<?php echo $this->flashSession->output();?> 
+
+<form action="" method="post" enctype="multipart/form-data">
+<center>
+    <label>ชื่อกิจกรรม</label>
+    <input type="text" class="form-control" placeholder="ชื่อกิจกรรม" required name="name">
+    <br><label>วันที่</label>
+    <input type="date" class="form-control" placeholder="mm/dd/yyyy" required name="date">
+    <br><label>รายละเอียด</label>
+    <textarea class="form-control" placeholder="รายละเอียด" required rows="4" name="details"></textarea>
+    <br><label>ภาพกิจกรรม</label>
+    <div class="custom-file">
+          <input type="file" name="photo"  class="custom-file-input"  >
+          <label class="custom-file-label" >Choose file</label>
+    </div>
+    <hr><button type="submit" class="btn btn-light">submit</button>
+</center>
+</form>

@@ -1,0 +1,24 @@
+<a href="<?php echo $this->url->getBaseUri().'event/add' ?>" class="btn btn-info"> Add </a>
+
+<table data-toggle="table" class="table">
+    <thead>
+        <tr>
+            <th data-field="id"> ลำดับ </th>
+            <th data-field="name"> ชื่อกิจกรรม</th>
+            <th data-field="date"> วันที่</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($data as $item){?>
+            <tr>
+                <td><?php echo $item->id ?></td>
+                <td><?php echo $item->name ?></td>
+                <td><?php echo $item->date ?></td>
+                <td><a href="<?php echo $this->url->getBaseUri().'event/edit/'.$item->id; ?>" class="btn btn-warning">edit</a></td>
+                <td><a href="<?php echo $this->url->getBaseUri().'event/del/'.$item->id; ?>" class="btn btn-danger navbar-btn">delete</a></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>      

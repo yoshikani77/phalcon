@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phalcon PHP Framework</title>
+    <?php echo $this->assets->outputCss('styles'); ?>    
+    <?php echo $this->assets->outputJs('scripts'); ?> 
+  </head>
+    <body id="page-top" >
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo $this->url->getBaseUri() ?>">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo $this->url->getBaseUri().'profile' ?>">Event</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo $this->url->getBaseUri().'about/index.html' ?>">About</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav  navbar-right">     
+   	<?php if($this->session->has('memberAuthen')) {?> 
+     
+   
+      <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo $this->url->getBaseUri().'profile' ?>"><?php echo $this->session->get('memberEmail');?></a>
+     </li>
+     <li class="nav-item mx-0 mx-lg-1">
+     		<a  class="btn btn-danger navbar-btn" href="authen/signOut"> Logout </a> 
+     </li>  
+    <?php } else {?>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a href="authen" class="btn btn-outline-primary"> Login </a>
+      </li>    
+     <li class="nav-item mx-0 mx-lg-1">
+       <a href="authen/signUp" class="btn btn-outline-info"> Sign Up </a>
+      </li>
+      <?php }?>
+    </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+   
+    <header class="masthead bg-primary text-white">
+       <div class="container"><?php echo $this->getContent(); ?></div>      
+    </header>
+
+   
+    <!-- Footer -->  
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Your Website 2018</small>
+      </div>
+    </div>
+
+  </body>
+  
+</html>
